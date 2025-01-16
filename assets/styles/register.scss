@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  // background-image: url("../../public/images/bg-img/07.jpg");
+  // background: #faf1fa;
+  // background-repeat: no-repeat;
+  // background-position: center;
+  // height: 100vh;
+  // background-size: cover;
+}
+
+.text-info-register {
+  font-size: 2.6em;
+  background: linear-gradient(
+    to right,
+    #ee62e7,
+    #9c4398a6,
+    #8f3f8b30,
+    #833a7f00
+  );
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.content-frm-register {
+  background: linear-gradient(
+    to top,
+    #733270,
+    #733270a6,
+    #73327030,
+    #73327000,
+    #73327000
+  );
+  border-radius: 5px;
+}
+
+.show-specialities {
+  display: block;
+}

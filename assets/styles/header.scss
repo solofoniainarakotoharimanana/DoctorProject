@@ -1,0 +1,97 @@
+$background-nav: #fff !important;
+$color-nav: #003060 !important;
+
+.nav-style {
+  background: $background-nav;
+  border-bottom: 1px solid #ccc;
+  padding: 1.3em;
+}
+
+.navbar-scolled {
+  -webkit-transition: all 0.6s ease-out;
+  -moz-transition: all 0.6s ease-out;
+  -o-transition: all 0.6s ease-out;
+  -ms-transition: all 0.6s ease-out;
+  transition: all 0.6s ease-out;
+}
+
+.welcome-title {
+  padding: 1px;
+  margin-top: 120px;
+  text-transform: uppercase;
+  background: linear-gradient(to right, #373737, #c0b283);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+@mixin navSecurity {
+  border-radius: 5px;
+  // background: linear-gradient(to bottom, #6193f1, #0f0da0);
+  background: #ffc300;
+  font-weight: 500;
+  margin-left: 30px;
+}
+
+.security-nav {
+  @include navSecurity();
+  a {
+    color: #fff;
+    font-size: 0.9em;
+    &:hover {
+      color: #f1f1f1;
+      // background: linear-gradient(to bottom, #90ade4, #3c3a9b);
+      background: #facc36;
+      border-radius: 5px;
+    }
+  }
+}
+
+.nav-item-link {
+  letter-spacing: 0.5px;
+  color: #8b938d;
+  font-weight: 500;
+  font-size: 0.9em;
+}
+
+.number-notif {
+  top: -2px;
+  left: 14px;
+}
+
+.link-notif {
+  font-size: 1.2em;
+  font-weight: 700;
+}
+
+.nav-logout {
+  font-weight: 500;
+  color: #8b938d;
+  font-size: 0.9em;
+}
+
+.wrapper {
+  border: 1px solid #ccc;
+}
+.wrap-icon {
+  // border: 1px solid #99045b;
+  text-align: center;
+  width: 40px;
+  margin: 0 auto;
+  // border-radius: 50%;
+  // background: #003060;
+  color: #0558ac;
+  font-weight: 700;
+  font-size: 1.3em;
+}
+
+.title-section {
+  color: #af1964;
+}
+
+.content-text {
+  // font-size: 0.4em;
+  text-align: justify;
+  font-size: 0.8em;
+}

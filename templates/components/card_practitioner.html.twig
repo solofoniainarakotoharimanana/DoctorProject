@@ -1,0 +1,47 @@
+<div class="col-12 col-sm-6 col-mg-3 mb-3">
+	<div class="card shadow-sm">
+		{% if p.profileImage is not null or p.profileImage != "" or p.profileImage is not defined  %}
+			<img class="card-img-top img-profile-pract" src="{{ vich_uploader_asset(p, 'imageFile') }}">
+		{% else %}
+			<img src="{{asset('/images/users/profile.png')}}" class="card-img-top img-profile-pract" alt="{{p.firstname ~ ' ' ~ p.lastname}}">
+		{% endif %}
+		<div class="card-body">
+			<h5 class="card-title text-center">DR
+				<small>{{p.firstname ~' '~p.lastname}}</small>
+			</h5>
+			{% if p.specilities|length > 0 %}
+				<p>
+					{% for speciality in p.specilities %}
+						{% if speciality is defined %}
+							<span class="spec-name">
+								{% if loop.last == speciality %}
+									<small>{{speciality.name}}</small>
+								{% else %}
+									<small>{{speciality.name}}
+										-
+									</small>
+								{% endif %}
+							</span>
+						{% endif %}
+					{% endfor %}
+				</p>
+			{% endif %}
+			<div>
+				<div class="row d-flex justify-content-center flex-wrap text-address">
+					<div class="col-6">
+						<small>{{p.address}}</small>
+					</div>
+					<div class="col-6">
+						{% if p.city is not null %}
+							<small>{{p.city}}</small>
+						{% endif %}
+					</div>
+
+				</div>
+			</div>
+			{# {{ dump(p) }} #}
+			<a href="#" class="btn btn-primary">Go somewhere</a>
+
+		</div>
+	</div>
+</div>

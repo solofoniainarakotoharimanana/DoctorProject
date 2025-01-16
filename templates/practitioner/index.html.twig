@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PractitionerController!
+{% endblock %}
+
+{% block body %}
+	<main class="container" role="main">
+
+		<div class="row content-list">
+			<div class="col-12 col-sm-12 col-lg-3">
+				<h6 class="title-pract">Récherche des médecin</h6>
+				{% include "/components/_filter.html.twig" with {searchForm:searchForm} %}
+			</div>
+			<div class="col-12 col-sm-12 col-lg-9">
+				<h2 class="title-pract text-center mb-5 text-uppercase">Liste des médecins</h2>
+				<div class="row">
+					{% for p in practitioners %}
+						{% include "components/card_practitioner.html.twig" with {p:p} only %}
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<div class="pagination-content d-flex justify-content-center m-3">
+					{{knp_pagination_render(practitioners)}}
+				</div>
+			</div>
+		</div>
+	</main>
+	{% block javascripts %}
+		<script>
+			document.querySelector('#specilaities').select2({multiple: true})
+		</script>
+	{% endblock %}
+{% endblock %}

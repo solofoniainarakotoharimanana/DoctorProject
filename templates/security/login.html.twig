@@ -1,0 +1,64 @@
+{% extends 'base_security.html.twig' %}
+
+{% block title %}Log in!
+{% endblock %}
+
+{% block body %}
+	<div class="frm-login" class="shadow-sm rounded">
+		<form method="post">
+			{% if error %}
+				<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+			{% endif %}
+
+			{% if app.user %}
+				<div class="mb-3">
+					You are logged in as
+					{{ app.user.userIdentifier }},
+					<a href="{{ path('app_logout') }}">Logout</a>
+				</div>
+			{% endif %}
+
+			<h1 class="h3 mb-3 font-weight-normal">Se connecter</h1>
+			{# <label for="inputEmail">Email</label> #}
+			<div class="form-group">
+				<input
+				type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control mb-3 p-2" autocomplete="email" placeholder="Email" required autofocus>
+			{# <label for="inputPassword">Password</label> #}
+			</div>
+			<div class="form-group position-relative">
+				<input type="password" name="password" id="inputPassword" class="form-control mb-3 p-2" autocomplete="current-password" required placeholder="Mot de passe">
+				<i class="bi bi-eye-slash-fill position-absolute  eye"></i>
+				<i class="bi bi-eye-fill position-absolute d-none eye"></i>
+
+			</div>
+			<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}"/>
+
+			<div class="checkbox mb-3">
+				<label>
+					<input type="checkbox" name="_remember_me">
+					Se souviens de moi
+				</label>
+			</div>
+
+			<button class="btn btn-lg btn-primary w-100 btn-login" type="submit">
+				Se connecter
+			</button>
+			<div class="row d-flex justify-content-start mt-2 p-0 ">
+				<div class="col-5">
+					<hr/>
+				</div>
+				<div class="col-2">ou</div>
+				<div class="col-5">
+					<hr/>
+				</div>
+			</div>
+			<p>Si vous n'avez pas encore une compte veuiller s'inscrire en cliquant
+				<span>
+					<a href="{{path('app_register')}}">ici</a>
+				</span>
+			</p>
+		</form>
+
+	</div>
+
+{% endblock %}

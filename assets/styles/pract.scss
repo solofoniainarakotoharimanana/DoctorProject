@@ -1,0 +1,58 @@
+:root {
+  --first-color: hsl(38, 92%, 58%);
+  --first-color-light: hsl(38, 100%, 78%);
+  --first-color-alt: hsl(38, 75%, 50%);
+  --second-color: hsl(195, 75%, 52%);
+  --dark-color: hsl(212, 40%, 12%);
+  --white-color: hsl(212, 4%, 95%);
+  --body-color: hsl(212, 42%, 15%);
+  --container-color: hsl(212, 42%, 20%);
+}
+
+.title-pract {
+  padding-top: 1px;
+  margin-top: 100px;
+}
+
+.text-address {
+  color: #f2f2f2;
+  font-size: 0.8em;
+  margin-bottom: 25px;
+  padding-top: 15px;
+  border-top: 1px solid #dddddd;
+}
+
+.content-list {
+  margin-top: 30px;
+  padding: 1px;
+}
+
+.card-title {
+  color: var(--white-color);
+}
+
+.card-body {
+  background: var(--body-color);
+}
+
+.img-profile-pract {
+  width: 150px;
+  margin: 20px auto;
+}
+.card-img-top {
+  background: #fff;
+}
+
+.spec-name {
+  color: var(--white-color) !important;
+  font-size: 0.9em;
+  line-height: 1.5em;
+}
+
+.text-address {
+  color: var(--white-color);
+}
+
+.pagination-content {
+  margin: 0 auto;
+}

@@ -1,0 +1,61 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary nav-style  fixed-top shadow-sm navbar-scolled">
+	<div class="container-fluid">
+		<a class="navbar-brand" href="#">Navbar</a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+				<li class="nav-item">
+					<a class="nav-link nav-child nav-item-link" href="#">Acceuil</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link nav-child nav-item-link" href="{{path('app_practitioner')}}">Médécin</a>
+
+				</li>
+				<li class="nav-item">
+					<a class="nav-link nav-child nav-item-link" href="#">Nous-contactez</a>
+				</li>
+
+				{# <li class="nav-item dropdown">
+																																																																																																																																																																									<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+																																																																																																																																																																										Dropdown
+																																																																																																																																																																									</a>
+																																																																																																																																																																									<ul class="dropdown-menu">
+																																																																																																																																																																										<li>
+																																																																																																																																																																											<a class="dropdown-item" href="#">Acceuil</a>
+																																																																																																																																																																										</li>
+																																																																																																																																																																										<li>
+																																																																																																																																																																											<a class="dropdown-item" href="#">Médécin</a>
+																																																																																																																																																																										</li>
+																																																																																																																																																																										<li><hr class="dropdown-divider"></li>
+																																																																																																																																																																										<li>
+																																																																																																																																																																											<a class="dropdown-item" href="#">Nous-contactez</a>
+																																																																																																																																																																										</li>
+																																																																																																																																																																									</ul>
+																																																																																																																																																																								</li> #}
+				<li class="nav-item">
+					<a class="nav-link position-relative link-notif" href="#">
+						<i class="bi bi-bell-fill" style="color: blue; font-size: 1em;"></i>
+						<span class="badge text-bg-danger position-absolute number-notif">99</span>
+					</a>
+				</li>
+				{% if app.user %}
+					<li class="nav-item nav-logout">
+						<a class="nav-link" href="{{path('app_logout')}}">Se deconnecter</a>
+					</li>
+				{% else %}
+					<li class="nav-item security-nav">
+						<a class="nav-link" href="{{path('app_login')}}">Se connecter</a>
+					</li>
+					<li class="nav-item nav-logout">
+						<a class="nav-link" href="{{path('app_register')}}">S'enregistrer</a>
+					</li>
+
+				{% endif %}
+
+
+			</ul>
+		</div>
+	</div>
+</nav>

@@ -1,0 +1,47 @@
+{% extends 'base_security.html.twig' %}
+
+{% block title %}Register
+{% endblock %}
+
+{% block body %}
+	{% for flash_error in app.flashes('verify_email_error') %}
+		<div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+	{% endfor %}
+	<main role="main" class="container ">
+
+		<div class="row ">
+			<div class="col-12 col-md-6 text-info-register mt-5">Inscrivez-vous afin que vous puissez créer des rendez-vous</div>
+			<div class="col-12 col-md-6 content-frm-register shadow-sm mt-5">
+				<h4 class="text-center p-2 ">Enregistrez vous ici</h4>
+				{{ form_errors(registrationForm) }}
+				{{ form_start(registrationForm, {attr: {'novalidate': 'novalidate'}}) }}
+				<div class="row">
+					<div class="col-12 col-md-6 col-lg-6">
+						{{form_row(registrationForm.firstname)}}
+					</div>
+					<div class="col-12 col-md-6 col-lg-6">
+						{{form_row(registrationForm.lastname)}}
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12 col-md-6 col-lg-6">
+						{{ form_row(registrationForm.address) }}
+					</div>
+					<div class="col-12 col-md-6 col-lg-6">
+						{{ form_row(registrationForm.city) }}
+					</div>
+				</div>
+				{{ form_row(registrationForm.email) }}
+				{{ form_row(registrationForm.password)}}
+				{{ form_row(registrationForm.imageFile)}}
+				{{ form_row(registrationForm.isPractitionner, {'attr': {'id':'check-pract'}}) }}
+				{{ form_row(registrationForm.specilities, {'attr': {'class': 'd-none', 'id':'select-specialities'}}) }}
+
+				{{ form_row(registrationForm.agreeTerms) }}
+
+				<button type="submit" class="btn btn-primary btn-sm w-75 text-center ms-5 mb-4">S'enregistrer</button>
+				{{ form_end(registrationForm) }}
+			</div>
+		</div>
+	</main>
+{% endblock %}
